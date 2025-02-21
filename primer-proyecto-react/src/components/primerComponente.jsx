@@ -1,31 +1,27 @@
-import  "../styles/primerComponente.css";
+import proptypes from "prop-types"
 
-const string = 'Esto es un texto';
-const number = 123456;
-const array = ['Curso de React', 'Youtube', 4, 100000, 'Hola Mundo'];
-const boolean = true;
-const funcion = () => 1 + 1;
-const objeto = { nombre: 'Curso de React', duracion: 4 };
-const fecha = new Date();
-
-
-
-export const PrimerComponente = () => {
+export const PrimerComponente = ({titulo, subtitulo, numero}) => {
 
     return (
         <>
-            <h1>Variables en JSX</h1>
-            <h4> Variable tipo String {string}</h4>
-            <h3> Variable tipo Number {number}</h3>
-            <h4> Variable tipo Array {array}</h4>
-            <h3> Variable tipo Boolean {boolean}</h3>
-            <h4> Variable tipo Funcion {funcion()}</h4>
-            <h3> Variable tipo Objeto {objeto.nombre} {objeto.duracion}</h3>
-            <h4> Variable tipo Fecha {fecha.toDateString()}</h4>
-            <h3> Variable tipo Null {null}</h3>
-            <h4> Variable tipo Undefined {undefined}</h4>
-            <h3> Variable tipo Boolean {true ? 'Verdadero' : 'Falso'}</h3>
+            <h1>{ titulo }</h1>
+            <h2>{ subtitulo }</h2>
+            <h2> { numero * 2 + (Math.pow(numero, 5)) } </h2> 
         </>
 
     )
+}
+
+//Hacer obligatoria la definicion de las props
+PrimerComponente.propTypes = {
+    titulo: proptypes.string.isRequired,
+    subtitulo: proptypes.string.isRequired,
+    numero: proptypes.number.isRequired
+}
+
+//Definir valores por defecto
+PrimerComponente.defaultProps = {
+    titulo: "Titulo por defecto",
+    subtitulo: "Subtitulo por defecto",
+    numero: 0
 }
