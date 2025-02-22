@@ -4,6 +4,7 @@ import { PrimerComponente } from './components/PrimerComponente.jsx'
 import { ContadorComponent } from './components/ContadorComponent.jsx'
 import { ListadoComponent } from './components/ListadoComponent.jsx'
 import './styles.css'
+import { UserComponent } from './components/UserComponent.jsx'
 
 
 
@@ -11,6 +12,7 @@ createRoot(document.getElementById('root')).render(
   <StrictMode>
     {/* <PrimerComponente titulo="Titulo" subtitulo="Subtitulo" numero={10} /> */}
     {/* <ContadorComponent value={0} /> */}
-    <ListadoComponent />
+    {/* <ListadoComponent /> */}
+    <UserComponent />
   </StrictMode>,
 )
