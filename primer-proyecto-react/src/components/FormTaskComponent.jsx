@@ -9,12 +9,8 @@ export const FormTaskComponent = ({ agregarTarea}) => {
     }
 
     function onSubmit(e) {
-        const envio = {
-            nombre: inputValue,
-            visto: false
-        }
         e.preventDefault();
-        agregarTarea(tareas => [...tareas, envio]);
+        agregarTarea(inputValue);
     }
 
     return (
