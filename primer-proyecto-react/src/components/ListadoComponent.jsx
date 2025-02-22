@@ -1,11 +1,13 @@
 import { useState } from 'react'
+import '../styles/ListadoComponent.css'
 
 const Items = ({ nombre, visto }) => {
+
     return (
-        <li>
-            {nombre}
-            {/* {visto ? '✅' : '⛔'} */}
-            {visto && '✅'}
+        <li className='item'>
+            <span>
+                {nombre} {visto ? '✅' : '❌'}
+            </span>
         </li>
     )
 }
@@ -14,7 +16,7 @@ const Items = ({ nombre, visto }) => {
 export const ListadoComponent = () => {
 
     let listadoSecciones = [
-        { nombre: 'Instalaciiones necesarias ', visto: true },
+        { nombre: 'Instalaciones necesarias ', visto: true },
         { nombre: 'Uso de vite ', visto: true },
         { nombre: 'Componentes ', visto: true },
         { nombre: 'Variables en JSX ', visto: true },
