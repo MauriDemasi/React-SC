@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
-export const FormTaskComponent = () => {
+
+export const FormTaskComponent = ({ agregarTarea}) => {
 
     const [inputValue, setinputValue] = useState('');
 
@@ -8,8 +9,12 @@ export const FormTaskComponent = () => {
     }
 
     function onSubmit(e) {
+        const envio = {
+            nombre: inputValue,
+            visto: false
+        }
         e.preventDefault();
-        console.log(inputValue);
+        agregarTarea(tareas => [...tareas, envio]);
     }
 
     return (
@@ -22,9 +27,6 @@ export const FormTaskComponent = () => {
                     onChange={onInputChange}
                     value={inputValue}
                 />
-                <button>
-                    Agregar Tarea
-                </button>
             </form>
         </>
     )

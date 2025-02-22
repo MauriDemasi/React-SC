@@ -33,7 +33,7 @@ export const ListadoComponent = () => {
     return (
         <>
             <h1>Listado de Temas del curso</h1>
-            <FormTaskComponent />
+            <FormTaskComponent agregarTarea={setarreglo} />
             <ol>
                 {arreglo.map(item =>
                     <Items key={item.nombre} nombre={item.nombre} visto={item.visto} />
