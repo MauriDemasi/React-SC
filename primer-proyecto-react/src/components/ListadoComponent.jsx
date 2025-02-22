@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import '../styles/ListadoComponent.css'
+import { FormTaskComponent } from './FormTaskComponent'
 
 const Items = ({ nombre, visto }) => {
 
@@ -32,16 +33,18 @@ export const ListadoComponent = () => {
     return (
         <>
             <h1>Listado de Temas del curso</h1>
+            <FormTaskComponent />
             <ol>
                 {arreglo.map(item =>
                     <Items key={item.nombre} nombre={item.nombre} visto={item.visto} />
                 )}
             </ol>
-            <button onClick={() => setarreglo(
+
+            {/* <button onClick={() => setarreglo(
                 [...arreglo, { nombre: 'Nuevo Tema', visto: false }]
             )}>
                 Agregar Tema
-            </button>
+            </button> */}
         </>
     )
 }
