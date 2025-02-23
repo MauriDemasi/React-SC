@@ -11,16 +11,12 @@ export const UserComponent = () => {
         setEndpoint('comments')
     }
 
-    // useEffect(() => {
-    //     fetchUsers()
-    // }, [])
-
   return (
     <>
 
       <UserListComponent endpoint={endpoint} />
       
-      <button onClick={handleFetch}>Obtener Usuarios</button>
+      <button onClick={handleFetch}>Peticiones</button>
     </>
   )
 }
