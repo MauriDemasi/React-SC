@@ -1,6 +1,9 @@
 import { useForm } from "../hooks/useForm";
+import { useEffect, useRef } from "react";
 
 export const FormComponent = () => {
+
+    const focusRef = useRef();
 
     const initialForm = {
         username: '',
@@ -18,6 +21,10 @@ export const FormComponent = () => {
         e.preventDefault();
         console.log(formState);
       };
+
+    useEffect(() => {
+        focusRef.current.focus();
+    }, []);
     
 
     return (
@@ -32,7 +39,7 @@ export const FormComponent = () => {
 
                 <div className="mb-3">
                     <label htmlFor="email" className="form-label">Email address</label>
-                    <input type="email" className="form-control" name="email" 
+                    <input ref={focusRef} type="email" className="form-control" name="email" 
                     placeholder="Email" value={email} onChange={onInputChange} />
                 </div>
 

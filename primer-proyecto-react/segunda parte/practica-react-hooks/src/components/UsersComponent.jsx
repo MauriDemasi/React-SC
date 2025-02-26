@@ -21,7 +21,6 @@ export const UsersComponent = () => {
               </tr>
             </thead>
             <tbody>
-
               {data.map((data) => (
                 <tr key={data.id}>
                   <th scope="row">{data.id}</th>
